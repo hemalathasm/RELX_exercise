@@ -55,3 +55,8 @@ resource "aws_instance" "web_server" {
     name = "terraform-web-server"
   }
 }
+
+output "instance_pblic_ip" {
+  description = "public IP of EC2"
+  value = aws_instance.web_server.public_ip
+}
