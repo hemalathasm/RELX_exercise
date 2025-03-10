@@ -9,7 +9,7 @@ data "aws_vpc" "default" {
 data "aws_subnet" "default" {
   vpc_id         = data.aws_vpc.default.id
   default_for_az = true
-  }
+}
 
 resource "aws_security_group" "web-sg" {
   name        = "web_security_group"
@@ -17,7 +17,7 @@ resource "aws_security_group" "web-sg" {
   vpc_id      = data.aws_vpc.default.id
 
   #Allow SSH from anywhere
-  ingress {                              
+  ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -58,5 +58,5 @@ resource "aws_instance" "web_server" {
 
 output "instance_pblic_ip" {
   description = "public IP of EC2"
-  value = aws_instance.web_server.public_ip
+  value       = aws_instance.web_server.public_ip
 }
