@@ -7,9 +7,9 @@ data "aws_vpc" "default" {
 }
 
 data "aws_subnet" "default" {
-  vpc_id         = data.aws_vpc.default.id
+  vpc_id = data.aws_vpc.default.id
   filter {
-    name = "availability_zone"
+    name   = "availability-zone"
     values = [var.availability_zone]
   }
 }
@@ -51,7 +51,7 @@ resource "aws_instance" "web_server" {
   subnet_id                   = data.aws_subnet.default.id
   vpc_security_group_ids      = [aws_security_group.web-sg.id]
   associate_public_ip_address = true
-  monitoring                  = true 
+  monitoring                  = true
 
   user_data = file("${path.module}/userdata.sh")
 
