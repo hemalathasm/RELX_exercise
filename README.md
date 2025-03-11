@@ -4,10 +4,10 @@
 3. Clone the repository : https://github.com/hemalathasm/RELX_exercise.git
 4. Navigate to Iac folder
 5. Excecute below commands:
-   -> terraform fmt          
-   -> terraform validate     
+   -> terraform fmt              
    -> terraform init
+   -> terraform validate 
    -> terraform plan
    -> terraform apply
 
-6. Public IP will be obtained as output
+7. Public IP will be obtained as output
