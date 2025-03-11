@@ -8,7 +8,10 @@ data "aws_vpc" "default" {
 
 data "aws_subnet" "default" {
   vpc_id         = data.aws_vpc.default.id
-  default_for_az = true
+  filter {
+    name = "availability_zone"
+    values = ["us-east-2a"]
+  }
 }
 
 resource "aws_security_group" "web-sg" {
@@ -48,6 +51,7 @@ resource "aws_instance" "web_server" {
   subnet_id                   = data.aws_subnet.default.id
   vpc_security_group_ids      = [aws_security_group.web-sg.id]
   associate_public_ip_address = true
+  monitoring                  = true 
 
   user_data = file("${path.module}/userdata.sh")
 
