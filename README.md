@@ -1,4 +1,4 @@
-# Steps to exeute code
+# Steps to execute code
 1. Install terraform.
 2. Configure AWS credentials using command : aws configure
 3. Clone the repository : https://github.com/hemalathasm/RELX_exercise.git
