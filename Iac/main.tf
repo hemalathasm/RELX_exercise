@@ -62,7 +62,7 @@ resource "aws_instance" "web_server" {
   }
 }
 
-output "instance_public_ip" {
+output "instance_pblic_ip" {
   description = "public IP of EC2"
   value       = aws_instance.web_server.public_ip
 }
