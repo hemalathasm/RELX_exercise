@@ -48,6 +48,7 @@ resource "aws_security_group" "web-sg" {
 resource "aws_instance" "web_server" {
   ami                         = var.ami_id
   instance_type               = var.instance_type
+  key_name                    = var.key_value
   subnet_id                   = data.aws_subnet.default.id
   vpc_security_group_ids      = [aws_security_group.web-sg.id]
   associate_public_ip_address = true

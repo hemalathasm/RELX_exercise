@@ -17,3 +17,8 @@ variable "ami_id" {
   type    = string
   default = "ami-0d8c288225dc75373"
 }
+
+variable "key_value" {
+  type    = string
+  default = "ohio"
+}
