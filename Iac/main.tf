@@ -52,7 +52,11 @@ resource "aws_instance" "web_server" {
   subnet_id                   = data.aws_subnet.default.id
   vpc_security_group_ids      = [aws_security_group.web-sg.id]
   associate_public_ip_address = true
+<<<<<<< HEAD
   monitoring                  = true      #for detailed monitoring
+=======
+  monitoring                  = true          #for detailed monitoring
+>>>>>>> 35dac4789921fa08daef5dd9a0150052db91fd33
 
   user_data = file("${path.module}/userdata.sh")
 
