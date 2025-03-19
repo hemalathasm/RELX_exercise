@@ -47,7 +47,7 @@ resource "aws_security_group" "web-sg" {
 #Cloud watch configuration
 resource "aws_iam_instance_profile" "cloudwatch-profile" {
   name = "CloudWatchInstanceProfile"
-  role = aws_iam_role.cloudWatchRole.name
+  role = aws_iam_role.cloudWatchRole.id
 }
 
 #EC2 instance creation

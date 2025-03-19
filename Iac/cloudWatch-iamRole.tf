@@ -15,6 +15,6 @@ resource "aws_iam_role" "cloudWatchRole" {
 
 resource "aws_iam_policy_attachment" "cloudWatch-agent-attach" {
   name       = "CloudWatchAgent-Attach"
-  roles      = [aws_iam_role.cloudWatchRole.name]
+  roles      = [aws_iam_role.cloudWatchRole.id]
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
 }
