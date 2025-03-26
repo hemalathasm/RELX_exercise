@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "me_myself"
+    workspaces {
+      name = "Mars-server"
+    }
+  }
+}
+
+
 provider "aws" {
   region = var.aws_region
 }
