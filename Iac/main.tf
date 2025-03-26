@@ -1,6 +1,15 @@
 terraform {
+  required_providers {
+    hcp = {
+      source  = "hashicorp/hcp"
+      version = "~> 0.55.0"  # Use a stable version
+    }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"  # Use the latest AWS provider version
+    }
+  }
   backend "remote" {
-    hostname = "app.terraform.io"
     organization = "me_myself"
     workspaces {
       name = "Mars-server"
@@ -8,6 +17,9 @@ terraform {
   }
 }
 
+provider "hcp" {
+  client_secret = var.tfc_api_token
+}
 
 provider "aws" {
   region = var.aws_region

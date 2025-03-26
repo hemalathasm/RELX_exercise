@@ -1,3 +1,12 @@
+variable "tfc_api_token" {
+  type = string
+}
+
+variable "aws_key" {
+  type = string
+  
+}
+
 variable "aws_region" {
   type    = string
   default = "us-east-2"
