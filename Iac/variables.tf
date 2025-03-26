@@ -2,9 +2,12 @@ variable "tfc_api_token" {
   type = string
 }
 
-variable "aws_key" {
+variable "access_id" {
   type = string
-  
+}
+
+variable "secret_key" {
+  type = string
 }
 
 variable "aws_region" {

@@ -12,7 +12,7 @@ terraform {
   backend "remote" {
     organization = "me_myself"
     workspaces {
-      name = "Mars-server"
+      name = "new-one"
     }
   }
 }
@@ -23,6 +23,8 @@ provider "hcp" {
 
 provider "aws" {
   region = var.aws_region
+  access_key = var.access_id
+  secret_key = var.secret_key
 }
 
 data "aws_vpc" "default" {
