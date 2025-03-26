@@ -44,11 +44,11 @@ resource "aws_security_group" "web-sg" {
   }
 }
 
-#Cloud watch configuration
+/*#Cloud watch configuration
 resource "aws_iam_instance_profile" "cloudwatch-profile" {
   name = "CloudWatchInstanceProfile"
   role = aws_iam_role.cloudWatchRole.id
-}
+}*/
 
 #EC2 instance creation
 resource "aws_instance" "web_server" {
