@@ -59,7 +59,7 @@ resource "aws_instance" "web_server" {
   vpc_security_group_ids      = [aws_security_group.web-sg.id]
   associate_public_ip_address = true
 
-  iam_instance_profile        = aws_iam_instance_profile.cloudwatch-profile.name
+  #iam_instance_profile        = aws_iam_instance_profile.cloudwatch-profile.name
 
   user_data = file("${path.module}/userdata.sh")
 
